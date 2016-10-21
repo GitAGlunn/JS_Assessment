@@ -74,8 +74,13 @@ exports.arraysAnswers = {
   },
 
   duplicates: function(arr) {
-  /**    const duplicateTest = arr.includes(arr[i])**/
-
+    function isDuplicate(val1, val2) {
+      if (val1 === val2) {
+        return val1;
+      }
+    }
+    const duplicado = arr.filter(isDuplicate(arr));
+    return duplicado;
   },
 
   square: function(arr) {
@@ -85,13 +90,15 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences: function(arr, target) {
-/**      let theOccurences = [];
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-          theOccurences.unshift(arr.indexOf(target));
-    }
-      console.log(theOccurences);
-      return theOccurences;
-      **/
+    let theOccurences = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        theOccurences.push(arr.indexOf(arr[i]));
+        arr.splice(i, 1, "hi");
+        console.log(arr.indexOf(arr[i]));
+  }
+}
+    return theOccurences;
+
   }
 };
